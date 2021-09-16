@@ -114,7 +114,7 @@
     <orderEntry type="library" name="Maven: org.jboss.xnio:xnio-nio:3.6.5.Final" level="project" />
     <orderEntry type="library" name="Maven: org.wildfly.plugins:wildfly-plugin-core:2.0.1.Final" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.2.20" level="project" />
-    <orderEntry type="library" name="Maven: org.primefaces:primefaces:10.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.primefaces:primefaces:jakarta:10.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.persistence:eclipselink:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.5.7.Final" level="project" />

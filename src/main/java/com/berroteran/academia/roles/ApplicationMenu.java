@@ -7,8 +7,6 @@ import com.avbravo.avbravoutils.JsfUtil.menu.MenuElement;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
 
 /**
  *

@@ -1,26 +1,9 @@
 package com.berroteran.test;
 
 
-import daos.PermisoJpaController;
-import daos.RolJpaController;
-import daos.UsuarioJpaController;
-import entities.postrgres.Permiso;
-import entities.postrgres.Rol;
-import entities.postrgres.Usuario;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
-import org.jinq.jpa.JPAQueryLogger;
-import org.jinq.jpa.JinqJPAStreamProvider;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -35,8 +18,9 @@ public class PostgresTest {
 
     private static EntityManagerFactory factory;
     private static EntityManager em;
-    private static JinqJPAStreamProvider streams;
+    //private static JinqJPAStreamProvider streams;
 
+    /*
     @BeforeClass
     public static void setUpPU() {
         factory = Persistence.createEntityManagerFactory("postgres-unit");
@@ -47,8 +31,10 @@ public class PostgresTest {
                     System.out.println("queryLogr -> " + query);
                 });
     }
+*/
 
-    @Before
+    //@Before
+
     public void setUp() {
         try {
             em.getTransaction().begin();
@@ -68,6 +54,7 @@ public class PostgresTest {
 
         try {
             //PERMISOS
+            /*
             Permiso permiso1 = new Permiso();
             permiso1.setDescripcion("permiso general");
             permiso1.setNombre("alta contrato");
@@ -112,10 +99,14 @@ public class PostgresTest {
             usuario1.setRol(rolAdministrador);
             usuario2.setRol(rolcapturista);
 
-            PermisoJpaController permisoController = new PermisoJpaController(factory);
-            RolJpaController rolController = new RolJpaController(factory);
-            UsuarioJpaController usuarioController = new UsuarioJpaController(factory);
+*/
 
+
+            //PermisoJpaController permisoController = new PermisoJpaController(factory);
+            //RolJpaController rolController = new RolJpaController(factory);
+            //UsuarioJpaController usuarioController = new UsuarioJpaController(factory);
+
+            /*
             permisoController.create(permiso1);
             permisoController.create(permiso2);
             permisoController.create(permiso3);
@@ -125,6 +116,7 @@ public class PostgresTest {
 
             usuarioController.create(usuario1);
             usuarioController.create(usuario2);
+            */
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -136,6 +128,8 @@ public class PostgresTest {
      * IMPRIME TODOS LOS ROLES, SUS PERMISOS Y USUARIOS A LOS QUE ESTA ASIGNADO
      * (EAGER FETCH)
      */
+
+    /*
     @Test
     public void simpleQuery() {
         streams.streamAll(em, Rol.class)
@@ -146,7 +140,8 @@ public class PostgresTest {
      *
      * IMPRIME LOS ROLES CON NOMBRE ADMINISTRADOR DE CONTRATOS
      */
-    @Test
+
+    /*@Test
     public void simpleQueryFilter() {
         streams.streamAll(em, Rol.class)
                 .filter(r -> r.getNombre().equals("Administrador de contratos"))
@@ -157,7 +152,7 @@ public class PostgresTest {
      *
      * IMPRIME LOS NOMBRES DE LOS ROLES
      */
-    @Test
+    /*@Test
     public void simpleQueryProjection() {
         streams.streamAll(em, Rol.class)
                 .map(r -> r.getNombre())
@@ -177,4 +172,5 @@ public class PostgresTest {
         }
     }
 
+    */
 }

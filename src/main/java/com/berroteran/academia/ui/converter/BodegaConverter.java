@@ -30,8 +30,8 @@ public class BodegaConverter implements Converter {
         try{
             if(!s.equals("null")){
                 Bodega b = new Bodega();
-                b.setIdbodega(s);
-                Optional<Bodega> optional = bodegaRepository.findById(b);
+                b.setIdbodega( Integer.valueOf(s));
+                Optional<Bodega> optional = Optional.ofNullable(bodegaRepository.find(b));
                 if (optional.isPresent()) {
                     bodega= optional.get();
                 }
