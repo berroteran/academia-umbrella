@@ -1,8 +1,6 @@
 package com.berroteran.academia.repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -26,13 +24,17 @@ public class GenericRepositoryImpl<T, ID> implements GenericRepository<T,ID>{
     protected EntityManager entityManager;
     private Class<T> type;
 
+
+
     public EntityManager getEntityManager() {
         return entityManager;
     }
 
     @PersistenceContext
-    public void setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public void setEntityManager() {
+        EntityManagerFactory emf= Persistence.createEntityManagerFactory("mislibros");
+        EntityManager em=emf.createEntityManager();
+        this.entityManager = em;
     }
 
     public GenericRepositoryImpl() {
